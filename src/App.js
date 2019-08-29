@@ -12,7 +12,7 @@ function App() {
   if (!error && blob) {
     try {
       const json = JSON.parse(blob);
-      camelified = beautifyJson(camelcaseKeys(json), null, 2, 80)
+      camelified = beautifyJson(camelcaseKeys(json, {deep: true}), null, 2, 80)
     } catch(e) {
       setError("JSON is not parseable, check it is valid.")
     }
