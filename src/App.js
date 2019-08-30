@@ -3,6 +3,12 @@ import './App.css';
 import camelcaseKeys from "camelcase-keys"
 import beautifyJson from "json-beautify"
 
+import brace from 'brace';
+import AceEditor from 'react-ace';
+
+import 'brace/mode/json';
+import 'brace/theme/tomorrow';
+
 function App() {
   const [blob, setBlob] = useState("")
   const [error, setError] = useState()
@@ -18,7 +24,7 @@ function App() {
     }
   }
 
-  const handleChange = (value) => {
+  const onChange = (value) => {
     setBlob(value)
     setError()
   }
@@ -26,10 +32,26 @@ function App() {
 
   return (
     <div className="row">
-      <textarea
-        className="column"
-        onChange={e => handleChange(e.target.value)}
-        placeholder="Insert JSON here."
+      <AceEditor
+        style={{ flex: 1 }}
+        placeholder="Put your JSON 'ere"
+        mode="json"
+        theme="tomorrow"
+        fontSize={16}
+        showPrintMargin={true}
+        showGutter={true}
+        highlightActiveLine={true}
+        onChange={value => onChange(value)}
+        value={blob}
+        name="UNIQUE_ID_OF_DIV"
+        editorProps={{$blockScrolling: true}}
+        setOptions={{
+          enableBasicAutocompletion: true,
+          enableLiveAutocompletion: true,
+          enableSnippets: true,
+          showLineNumbers: true,
+          tabSize: 2,
+        }}
       />
       <div className="column grey">
         {error ?

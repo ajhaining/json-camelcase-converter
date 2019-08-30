@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "brace": "^0.11.1",
     "camelcase-keys": "^6.0.1",
     "json-beautify": "^1.1.0",
+    "prettier": "^1.18.2",
     "react": "^16.9.0",
+    "react-ace": "^7.0.2",
     "react-dom": "^16.9.0",
+    "react-json-editor-ajrm": "^2.5.9",
     "react-scripts": "3.1.1"
   },
   "scripts": {
