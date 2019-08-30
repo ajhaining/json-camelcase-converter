@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="row">
       <AceEditor
-        style={{ flex: 1 }}
+        style={{ flex: 1, height: "100vh" }}
         placeholder="Put your JSON 'ere"
         mode="json"
         theme="tomorrow"
