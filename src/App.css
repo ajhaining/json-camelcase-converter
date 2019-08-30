@@ -23,6 +23,10 @@
   background-color: #eeeeee;
 }
 
+pre {
+  margin: 0
+}
+
 .error {
   border-radius: 4px;
   background: #e74c3c;
